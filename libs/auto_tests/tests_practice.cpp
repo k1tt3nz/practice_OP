@@ -177,7 +177,38 @@ void test_task_9();
 
 
 //10
-void test_task_10();
+
+void test_task_10_smallText() {
+    string titleText = "HELLO. WORLD";
+    string lowercaseText = convertTextToLowercase(titleText);
+
+    string testText = "Hello. World";
+
+    assert(lowercaseText == testText);
+}
+
+void test_task_10_largeText() {
+    string titleText = "“MY NAME IS VITO SCALETTA. I WAS BORN IN SICILY IN THE 25TH YEAR. THIS BABY IS ME. "
+                       "I AM STANDING WITH MY PARENTS AND SISTER FRENCH NEAR THE OLD HOUSE. "
+                       "I DON'T REMEMBER MUCH ABOUT THOSE TIMES... "
+                       "EXCEPT THAT LIFE WAS HARD. FATHER THEN DECIDED THAT IT WAS TIME TO LEAVE. LEAVE SICILY. "
+                       "CROSS THE OCEAN AND START A NEW LIFE IN AMERICA...";
+
+    string lowercaseText = convertTextToLowercase(titleText);
+
+    string testText = "“My name is Vito Scaletta. I was born in Sicily in the 25th year. This baby is me. "
+                      "I am standing with my parents and sister French near the old house. "
+                      "I don't remember much about those times... Except that life was hard. "
+                      "Father then decided that it was time to leave. Leave Sicily. "
+                      "Cross the ocean and start a new life in America...";
+
+    assert(lowercaseText == testText);
+}
+
+void test_task_10() {
+    test_task_10_smallText();
+    test_task_10_largeText();
+}
 
 
 //11

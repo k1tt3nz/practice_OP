@@ -61,7 +61,8 @@ bool isEven(const int x) {
 
 double _getInfFractionBeforeX(const int x) {
     if (x == 1) { return 1; }
-    else { return 1 / (x + _getInfFractionBeforeX(x + 1)); }
+    else if (isEven(x)) { return (x + 1 / _getInfFractionBeforeX(x - 1)); }
+    else { return (x - 1 / _getInfFractionBeforeX(x - 1)); }
 }
 
 double infFractionBeforeX(const int x) {
@@ -69,7 +70,7 @@ double infFractionBeforeX(const int x) {
 }
 
 void calcExpUsingInfiniteFraction(const int x) {
-    double exp = 1;
+    double exp = 0;
     exp += infFractionBeforeX(x);
     cout << exp;
 }
@@ -151,4 +152,39 @@ void task_6() {
     cin >> sizeVector;
 
     vector<int> a(sizeVector);
+}
+
+// 10 Задание
+
+#include <cctype>
+
+string convertTextToLowercase(string text) {
+    string newText;
+    bool isFirstLetterSentence = true;
+    for (char &i: text) {
+        if (isalnum(i)) {
+            if (isFirstLetterSentence) {
+                newText += i;
+                isFirstLetterSentence = false;
+            } else {
+                newText += tolower(i);
+            }
+        } else {
+            if (i == '.') isFirstLetterSentence = true;
+
+            newText += i;
+        }
+    }
+
+    return newText;
+}
+
+void task_10() {
+    string testText = "“MY NAME IS VITO SCALETTA. I WAS BORN IN SICILY IN THE 25TH YEAR. THIS BABY IS ME. "
+                      "I AM STANDING WITH MY PARENTS AND SISTER FRENCH NEAR THE OLD HOUSE. "
+                      "I DON'T REMEMBER MUCH ABOUT THOSE TIMES... "
+                      "EXCEPT THAT LIFE WAS HARD. FATHER THEN DECIDED THAT IT WAS TIME TO LEAVE. LEAVE SICILY. "
+                      "CROSS THE OCEAN AND START A NEW LIFE IN AMERICA...";
+    string text = convertTextToLowercase(testText);
+    cout << text;
 }

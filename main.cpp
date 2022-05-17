@@ -15,8 +15,7 @@ void outputVector(vector<Type> &v) {
 }
 
 int main() {
-
-    calcExpUsingInfiniteFraction(2);
+    test_task_10();
 
     return 0;
 }
