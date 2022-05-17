@@ -7,15 +7,20 @@
 using namespace std;
 
 
-template<typename Type>
-void outputVector(vector<Type> &v) {
-    for (auto &x: v) {
-        cout << x << ' ';
-    }
-}
-
 int main() {
-    test_task_10();
+    vector<int> v1 = {1, 1, 1, 0, 1, 1, 0, 0, 1};
+    vector<int> v2 = {2, 2, 2, 0, 2, 2, 0, 0, 2};
+
+    matrix m1(v1);
+    matrix m2(v2);
+    matrix<int> m3(5, 5);
+    m3.multiplicationMatrices(m1, m2);
+
+    vector<int> matrixM3;
+    createVectorFromMatrix(matrixM3,m3);
+    vector<int> testCase = {2, 4, 6, 0, 2, 4, 0, 0, 0};
+
+    assert(matrixM3 == testCase);
 
     return 0;
 }

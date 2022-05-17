@@ -5,6 +5,7 @@
 #include <vector>
 #include <iomanip>
 #include <malloc.h>
+#include <cassert>
 
 using namespace std;
 
@@ -22,6 +23,8 @@ public:
 
     matrix(matrix &m1);
 
+    explicit matrix(vector<T> &v);
+
     ~matrix();
 
     int getRows();
@@ -38,7 +41,13 @@ public:
 
     vector<T> createArray(vector<T> v);
 
-    void generate_1();
+    void resize(const size_t rows, const size_t cols);
+
+    bool can_multiply(const matrix &other);
+
+    void multiply(const matrix &other);
+
+    void multiplicationMatrices(const matrix<T> &m1, const matrix<T> &m2);
 };
 
 template<class T>
@@ -54,6 +63,19 @@ matrix<T>::matrix(size_t nRows, size_t nCols) {
     m_cols = nCols;
     m_values = new T[nRows * nCols];
 
+}
+
+template<class T>
+matrix<T>::matrix(vector<T> &v) {
+    size_t sizeRowsAndCols = sqrt(v.size());
+    m_rows = sizeRowsAndCols;
+    m_cols = sizeRowsAndCols;
+
+    m_values = new T[m_rows * m_cols];
+
+    for (int i = 0; i < v.size(); ++i) {
+        m_values[i] = v[i];
+    }
 }
 
 template<class T>
@@ -89,6 +111,11 @@ void matrix<T>::generateChessMatrix() {
 
 template<class T>
 void matrix<T>::inputKeyboard() {
+    if (m_values == nullptr) {
+        cout << "memory not allocated";
+        return;
+    }
+
     for (int i = 0; i < m_rows; ++i) {
         for (int j = 0; j < m_cols; ++j) {
             cin >> m_values[i * m_cols + j];
@@ -120,5 +147,57 @@ template<class T>
 int matrix<T>::getIndex(const size_t i, const size_t j) {
     return m_values[i * m_cols + j];
 }
+
+template<class T>
+vector<T> matrix<T>::createArray(vector<T> v) {
+    return vector<T>();
+}
+
+template<class T>
+void matrix<T>::resize(const size_t rows, const size_t cols) {
+    m_rows = rows;
+    m_cols = cols;
+    if (m_values)
+        delete[] m_values;
+    m_values = new double[m_rows * m_cols];
+}
+
+template<class T>
+bool matrix<T>::can_multiply(const matrix &other) {
+    return m_rows == other.m_cols;
+}
+
+template<class T>
+void matrix<T>::multiply(const matrix &other) {
+    if (false == can_multiply(other)) {
+        matrix empty;
+        return ;
+    }
+    matrix result(m_rows, other.m_cols);
+    for (int i = 0; i < m_rows; i++) {
+        for (int j = 0; j < other.m_cols; j++) {
+            result.m_values[i * m_cols + j] = 0;
+            for (int k = 0; k < m_cols; k++) {
+                result.m_values[i * m_cols + j] += getIndex(i, k) * other.get(k, j);
+            }
+        }
+    }
+    return ;
+}
+
+template<class T>
+void matrix<T>::multiplicationMatrices(const matrix<T> &m1, const matrix<T> &m2) {
+    assert(m1.m_cols == m2.m_rows);
+
+    matrix<T> result(m1.m_rows, m2.m_cols);
+    for (int i = 0; i < m1.m_rows; ++i) {
+        for (int j = 0; j < m2.m_cols; ++j) {
+            for (int k = 0; k < m1.m_cols; ++k) {
+                result.m_values[i * m_cols + j] += m1.m_values[i * m_values + k] * m2.m_values[k * m_values + j];
+            }
+        }
+    }
+}
+
 
 #endif

@@ -173,7 +173,43 @@ void test_task_8();
 
 
 //9
-void test_task_9();
+
+void test_task_9_1() {
+    vector<int> v1 = {1, 1, 1, 0, 1, 1, 0, 0, 1};
+    vector<int> v2 = {2, 2, 2, 0, 2, 2, 0, 0, 2};
+
+    matrix m1(v1);
+    matrix m2(v2);
+    matrix<int> m3();
+    m3.multiplicationMatrices(m1, m2);
+
+    vector<int> matrixM3;
+    createVectorFromMatrix(matrixM3, m3);
+    vector<int> testCase = {2, 4, 6, 0, 2, 4, 0, 0, 0};
+
+    assert(matrixM3 == testCase);
+}
+
+void test_task_9_2() {
+    vector<int> v1 = {1, 2, 3, 0, 5, 6, 0, 0, 9};
+    vector<int> v2 = {9, 8, 7, 0, 5, 4, 0, 0, 1};
+
+    matrix m1(v1);
+    matrix m2(v2);
+    matrix<int> m3();
+    m3.multiplicationMatrices(m1, m2);
+
+    vector<int> matrixM3;
+    createVectorFromMatrix(matrixM3, m3);
+    vector<int> testCase = {9, 18, 18, 0, 25, 26, 0, 0, 9};
+
+    assert(matrixM3 == testCase);
+}
+
+void test_task_9(){
+    test_task_9_1();
+    test_task_9_2();
+}
 
 
 //10
@@ -196,11 +232,12 @@ void test_task_10_largeText() {
 
     string lowercaseText = convertTextToLowercase(titleText);
 
-    string testText = "“My name is Vito Scaletta. I was born in Sicily in the 25th year. This baby is me. "
-                      "I am standing with my parents and sister French near the old house. "
+    string testText = "“My name is vito scaletta. I was born in sicily in the 25th year. This baby is me. "
+                      "I am standing with my parents and sister french near the old house. "
                       "I don't remember much about those times... Except that life was hard. "
-                      "Father then decided that it was time to leave. Leave Sicily. "
-                      "Cross the ocean and start a new life in America...";
+                      "Father then decided that it was time to leave. Leave sicily. "
+                      "Cross the ocean and start a new life in america...";
+
 
     assert(lowercaseText == testText);
 }
@@ -211,28 +248,12 @@ void test_task_10() {
 }
 
 
-//11
-void test_task_11();
-
-
-//12
-void test_task_12();
-
-
-//13
-void test_task_13();
-
-
-//14
-void test_task_14();
-
-
-//15
-void test_task_15();
-
 void test_full_task() {
     test_task_1();
     test_task_2();
+    test_task_4();
     test_task_5();
     test_task_6();
+    test_task_9();
+    test_task_10();
 }
