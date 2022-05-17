@@ -1,14 +1,5 @@
-//
-// Created by k1tt3nz on 07.05.22.
-//
-
-#ifndef PRACTICEOP_POINT_H
-#define PRACTICEOP_POINT_H
+#ifndef PRACTICE_OP_POINT_H
+#define PRACTICE_OP_POINT_H
 
 
-class point {
-
-};
-
-
-#endif //PRACTICEOP_POINT_H
+#endif //PRACTICE_OP_POINT_H

@@ -39,6 +39,12 @@
 				"file" : 0,
 				"line" : 8,
 				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 9,
+				"parent" : 0
 			}
 		]
 	},
@@ -55,11 +61,15 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/k1tt3nz/CLionProjects/practiceOP/libs/tasks"
+					"path" : "/home/k1tt3nz/CLionProjects/practice_OP/libs/tasks"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/home/k1tt3nz/CLionProjects/practiceOP/libs/auto_tests"
+					"path" : "/home/k1tt3nz/CLionProjects/practice_OP/libs/auto_tests"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/k1tt3nz/CLionProjects/practice_OP/libs/classes"
 				}
 			],
 			"language" : "CXX",
