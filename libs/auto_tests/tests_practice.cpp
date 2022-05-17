@@ -62,7 +62,9 @@ void test_task_3() {
     // Тестируем время работы функции вычисления
     // способом бесконечного ряда
     auto start_time_Series = chrono::steady_clock::now();
+
     calcExpUsingSeries(x); // Тестируемая функция
+
     auto end_time_Series = chrono::steady_clock::now();
     auto runtimeSeries = chrono::duration_cast<chrono::microseconds>(end_time_Series - start_time_Series);
 
@@ -70,8 +72,10 @@ void test_task_3() {
     // Тестируем время работы функции вычисления
     // способом бесконечной дроби
     auto start_time_InfFraction = chrono::steady_clock::now();
+
     //void calcExpUsingInfiniteFraction(x);    // Тестируемая функция
     auto end_time_InfFraction = chrono::steady_clock::now();
+
     auto runtimeInfFraction = chrono::duration_cast<chrono::microseconds>(
             end_time_InfFraction - start_time_InfFraction);
 

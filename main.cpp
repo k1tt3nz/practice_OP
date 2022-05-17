@@ -16,6 +16,7 @@ void outputVector(vector<Type> &v) {
 
 int main() {
 
+    calcExpUsingInfiniteFraction(2);
 
     return 0;
 }

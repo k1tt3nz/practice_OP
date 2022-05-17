@@ -1,7 +1,7 @@
 #include "practice.h"
 #include "matrix.h"
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 
 // Задача 1
@@ -37,25 +37,42 @@ void task_2(const point a, const point b, const point c, vector<pair<double, dou
 }
 
 int _getFactorial(const int x) {
-    int factorial = 1;
-    for (int i = 1; i <= x; ++i) {
-        factorial *= i;
-    }
-    return factorial;
+    if (x == 0) { return 1; }
+    else if (x < 0) { return 0; }
+    else { return x * _getFactorial(x - 1); }
 }
 
 int factorial(const int x) {
     return _getFactorial(x);
 }
 
-void calcExpUsingSeries(const int x) {
+double calcExpUsingSeries(const int x) {
     double exp = 2;
-    for (int i = 1; i <= x; ++i) {
-        exp += 1 / factorial(i);
+    for (int i = 2; i <= x; ++i) {
+        exp += 1.0 / factorial(i);
     }
+
+    return exp;
 }
 
-void calcExpUsingInfiniteFraction() {}
+bool isEven(const int x) {
+    return x % 2 == 0;
+}
+
+double _getInfFractionBeforeX(const int x) {
+    if (x == 1) { return 1; }
+    else { return 1 / (x + _getInfFractionBeforeX(x + 1)); }
+}
+
+double infFractionBeforeX(const int x) {
+    return _getInfFractionBeforeX(x);
+}
+
+void calcExpUsingInfiniteFraction(const int x) {
+    double exp = 1;
+    exp += infFractionBeforeX(x);
+    cout << exp;
+}
 
 void task_3() {
 
