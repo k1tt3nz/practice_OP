@@ -207,15 +207,39 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11.2.0/tr1/poly_hermite.tcc \
   /usr/include/c++/11.2.0/tr1/poly_laguerre.tcc \
   /usr/include/c++/11.2.0/tr1/riemann_zeta.tcc \
-  ../libs/auto_tests/tests_practice.h \
-  ../libs/auto_tests/tests_practice.cpp \
-  ../libs/auto_tests/tests_practice.h \
-  ../libs/tasks/practice.h \
+  /usr/include/c++/11.2.0/algorithm \
+  /usr/include/c++/11.2.0/utility \
+  /usr/include/c++/11.2.0/bits/stl_relops.h \
+  /usr/include/c++/11.2.0/bits/stl_algo.h \
+  /usr/include/c++/11.2.0/bits/algorithmfwd.h \
+  /usr/include/c++/11.2.0/bits/stl_heap.h \
+  /usr/include/c++/11.2.0/bits/stl_tempbuf.h \
+  /usr/include/c++/11.2.0/bits/uniform_int_dist.h \
+  /usr/include/c++/11.2.0/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11.2.0/functional \
+  /usr/include/c++/11.2.0/tuple \
+  /usr/include/c++/11.2.0/array \
+  /usr/include/c++/11.2.0/bits/uses_allocator.h \
+  /usr/include/c++/11.2.0/bits/invoke.h \
+  /usr/include/c++/11.2.0/bits/refwrap.h \
+  /usr/include/c++/11.2.0/bits/std_function.h \
+  /usr/include/c++/11.2.0/unordered_map \
+  /usr/include/c++/11.2.0/ext/aligned_buffer.h \
+  /usr/include/c++/11.2.0/bits/hashtable.h \
+  /usr/include/c++/11.2.0/bits/hashtable_policy.h \
+  /usr/include/c++/11.2.0/bits/node_handle.h \
+  /usr/include/c++/11.2.0/bits/unordered_map.h \
+  /usr/include/c++/11.2.0/bits/erase_if.h \
   /usr/include/c++/11.2.0/vector \
   /usr/include/c++/11.2.0/bits/stl_uninitialized.h \
   /usr/include/c++/11.2.0/bits/stl_vector.h \
   /usr/include/c++/11.2.0/bits/stl_bvector.h \
   /usr/include/c++/11.2.0/bits/vector.tcc \
+  /usr/include/c++/11.2.0/pstl/execution_defs.h \
+  ../libs/auto_tests/tests_practice.h \
+  ../libs/auto_tests/tests_practice.cpp \
+  ../libs/auto_tests/tests_practice.h \
+  ../libs/tasks/practice.h \
   ../libs/tasks/practice.cpp \
   ../libs/tasks/practice.h \
   ../libs/classes/matrix.h \
@@ -230,12 +254,6 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11.2.0/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11.2.0/bits/locale_conv.h \
   /usr/include/c++/11.2.0/bits/unique_ptr.h \
-  /usr/include/c++/11.2.0/utility \
-  /usr/include/c++/11.2.0/bits/stl_relops.h \
-  /usr/include/c++/11.2.0/tuple \
-  /usr/include/c++/11.2.0/array \
-  /usr/include/c++/11.2.0/bits/uses_allocator.h \
-  /usr/include/c++/11.2.0/bits/invoke.h \
   /usr/include/c++/11.2.0/bits/quoted_string.h \
   /usr/include/c++/11.2.0/sstream \
   /usr/include/c++/11.2.0/bits/sstream.tcc \
@@ -257,16 +275,6 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11.2.0/bits/sstream.tcc:
 
-/usr/include/c++/11.2.0/bits/invoke.h:
-
-/usr/include/c++/11.2.0/array:
-
-/usr/include/c++/11.2.0/bits/uses_allocator.h:
-
-/usr/include/c++/11.2.0/bits/stl_relops.h:
-
-/usr/include/c++/11.2.0/utility:
-
 /usr/include/c++/11.2.0/bits/locale_conv.h:
 
 /usr/include/c++/11.2.0/bits/locale_facets_nonio.tcc:
@@ -281,13 +289,45 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
 
 ../libs/tasks/practice.cpp:
 
+../libs/auto_tests/tests_practice.cpp:
+
+../libs/auto_tests/tests_practice.h:
+
+/usr/include/c++/11.2.0/pstl/execution_defs.h:
+
 /usr/include/c++/11.2.0/bits/stl_bvector.h:
 
 /usr/include/c++/11.2.0/bits/stl_vector.h:
 
-../libs/auto_tests/tests_practice.cpp:
+/usr/include/c++/11.2.0/bits/unordered_map.h:
 
-../libs/auto_tests/tests_practice.h:
+/usr/include/c++/11.2.0/bits/node_handle.h:
+
+/usr/include/c++/11.2.0/ext/aligned_buffer.h:
+
+/usr/include/c++/11.2.0/bits/std_function.h:
+
+/usr/include/c++/11.2.0/bits/refwrap.h:
+
+/usr/include/c++/11.2.0/bits/invoke.h:
+
+/usr/include/c++/11.2.0/array:
+
+/usr/include/c++/11.2.0/pstl/glue_algorithm_defs.h:
+
+/usr/include/c++/11.2.0/bits/uniform_int_dist.h:
+
+/usr/include/c++/11.2.0/bits/stl_tempbuf.h:
+
+/usr/include/c++/11.2.0/bits/stl_algo.h:
+
+/usr/include/c++/11.2.0/bits/uses_allocator.h:
+
+/usr/include/c++/11.2.0/bits/stl_relops.h:
+
+/usr/include/c++/11.2.0/utility:
+
+/usr/include/c++/11.2.0/algorithm:
 
 /usr/include/c++/11.2.0/tr1/riemann_zeta.tcc:
 
@@ -327,6 +367,8 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11.2.0/bits/ios_base.h:
 
+/usr/include/c++/11.2.0/bits/hashtable_policy.h:
+
 /usr/include/bits/endianness.h:
 
 /usr/include/ctype.h:
@@ -349,11 +391,15 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11.2.0/cstdint:
 
+/usr/include/c++/11.2.0/bits/erase_if.h:
+
 /usr/include/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/c++/11.2.0/bits/predefined_ops.h:
 
 /usr/include/c++/11.2.0/debug/debug.h:
+
+/usr/include/c++/11.2.0/bits/hashtable.h:
 
 /usr/include/bits/types/struct_tm.h:
 
@@ -368,6 +414,8 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11.2.0/tr1/special_function_util.h:
 
 /usr/include/bits/stdint-uintn.h:
+
+/usr/include/c++/11.2.0/functional:
 
 /usr/include/c++/11.2.0/bits/stl_function.h:
 
@@ -495,6 +543,8 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/bits/types/__fpos_t.h:
 
+/usr/include/c++/11.2.0/unordered_map:
+
 /usr/include/c++/11.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h:
 
 /usr/include/bits/floatn-common.h:
@@ -502,6 +552,8 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11.2.0/x86_64-pc-linux-gnu/bits/c++locale.h:
 
 /usr/include/bits/timesize.h:
+
+/usr/include/c++/11.2.0/bits/algorithmfwd.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include/stddef.h:
 
@@ -610,6 +662,8 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
 /usr/include/bits/waitflags.h:
 
 /usr/include/endian.h:
+
+/usr/include/c++/11.2.0/bits/stl_heap.h:
 
 /usr/include/c++/11.2.0/cerrno:
 
