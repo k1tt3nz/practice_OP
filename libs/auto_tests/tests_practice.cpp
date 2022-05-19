@@ -1,5 +1,5 @@
 #include "tests_practice.h"
-#include "practice.h"
+#include "../../practice.h"
 #include "matrix.h"
 #include <cassert>
 
@@ -22,12 +22,14 @@ void test_task_1() {
 
 //2
 void test_task_2_1() {
-    point a = {1, 2};
-    point b = {3, 4};
-    point c = {5, 6};
+    point<int> a = {1, 2};
+    point<int> b = {3, 4};
+    point<int> c = {5, 6};
+    triangle<int> abc;
+    createTriangle(abc, a, b, c);
 
     vector<pair<double, double>> points;
-    task_2(a, b, c, points);
+    createVectorTriangleVerticesClockwise(abc, points);
 
     assert(points[0].first == 1 && points[0].second == 2);
     assert(points[1].first == 3 && points[1].second == 4);
@@ -35,12 +37,14 @@ void test_task_2_1() {
 }
 
 void test_task_2_2() {
-    point a = {1, 4};
-    point b = {10, 1};
-    point c = {1, 1};
+    point<int> a = {1, 4};
+    point<int> b = {10, 1};
+    point<int> c = {1, 1};
+    triangle<int> abc;
+    createTriangle(abc, a, b, c);
 
     vector<pair<double, double>> points;
-    task_2(a, b, c, points);
+    createVectorTriangleVerticesClockwise(abc, points);
 
     assert(points[0].first == 1 && points[0].second == 4);
     assert(points[1].first == 10 && points[1].second == 1);

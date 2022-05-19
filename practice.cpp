@@ -10,30 +10,72 @@ Type task_1(Type h) {
     auto a = h * sqrt(2);
     auto c = 2 * h;
 
-    return c; // Вернем c для автоматизированного теста
+    return a, c;
 }
 
 
 // Задача 2
 
-template<typename Type1, typename Type2>
-void outputPairVector(vector<pair<Type1, Type2>> vec) {
+// Структура точка в двумерном пространстве
+template<typename T>
+struct point {
+    T x{}, y{};
+};
+
+template<typename T>
+void outputPoint(point<T> p) {
+    cout << p.x << ';' << p.y << '\n';
+}
+
+// Структура треугольник
+// point A, B, C - точки в двумерном пространстве
+template<typename T>
+struct triangle {
+    point<T> A;
+    point<T> B;
+    point<T> C;
+};
+
+// Возвращает структуру треугольник созданную по вершинами заданных точек: point A, point B, point C
+// triangle - структура треугольник
+// point A, B, C - точки в двумерном пространстве
+template<typename T1, typename T2>
+triangle<T1> createTriangle(triangle<T1> triangle, const point<T2> A, const point<T2> B, const point<T2> C) {
+    triangle.A = A;
+    triangle.B = B;
+    triangle.C = C;
+
+    return triangle;
+}
+
+template<typename T>
+void outputTriangle(const triangle<T> triangle) {
+    outputPoint(triangle.A);
+    outputPoint(triangle.B);
+    outputPoint(triangle.C);
+}
+
+
+template<typename T1, typename T2>
+// Выводит вектор пары x.first ; x.second
+void outputPairVector(vector<pair<T1, T2>> vec) {
     for (auto &x: vec) {
         cout << x.first << ';' << x.second << ' ';
     }
 }
 
-void task_2(const point a, const point b, const point c, vector<pair<double, double>> &vec) {
-    if (a.x * b.y - a.y * b.x < 0) {
-        vec.emplace_back(a.x, a.y);
-        vec.emplace_back(b.x, b.y);
-        vec.emplace_back(c.x, c.y);
+// Заполняет вектор пар vec вершинами треугольника triangle по часовой стрелке
+template<typename T>
+void createVectorTriangleVerticesClockwise(const triangle<T> triangle, vector<pair<double, double>> &vec) {
+    if (triangle.A.x * triangle.B.y - triangle.A.y * triangle.B.x < 0) {
+        vec.emplace_back(triangle.A.x, triangle.A.y);
+        vec.emplace_back(triangle.B.x, triangle.B.y);
+        vec.emplace_back(triangle.C.x, triangle.C.y);
     } else {
-        vec.emplace_back(b.x, b.y);
-        vec.emplace_back(a.x, a.y);
-        vec.emplace_back(c.x, c.y);
+        vec.emplace_back(triangle.B.x, triangle.B.y);
+        vec.emplace_back(triangle.A.x, triangle.A.y);
+        vec.emplace_back(triangle.C.x, triangle.C.y);
     }
-
 }
 
 int _getFactorial(const int x) {
@@ -81,6 +123,7 @@ void task_3() {
 
 // 4 Задание
 
+// Заполняет вектор v элементами матрицы m
 template<typename Type1, typename Type2>
 void createVectorFromMatrix(vector<Type1> &v, matrix<Type2> m) {
     for (int i = 0; i < m.getRows(); ++i) {
@@ -90,6 +133,8 @@ void createVectorFromMatrix(vector<Type1> &v, matrix<Type2> m) {
     }
 }
 
+// Возвращает "Истину", если вектор заполнен шахматным порядком,
+// то есть элементы повторяются строго через одного ,иначе"Лож"
 template<typename T>
 bool isChessVector(vector<T> v) {
     for (int i = 1; i < v.size(); ++i) {

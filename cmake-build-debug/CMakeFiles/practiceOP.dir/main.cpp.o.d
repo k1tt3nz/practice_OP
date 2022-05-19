@@ -177,9 +177,9 @@ CMakeFiles/practiceOP.dir/main.cpp.o: \
  /home/k1tt3nz/CLionProjects/practice_OP/libs/auto_tests/tests_practice.h \
  /home/k1tt3nz/CLionProjects/practice_OP/libs/auto_tests/tests_practice.cpp \
  /home/k1tt3nz/CLionProjects/practice_OP/libs/auto_tests/tests_practice.h \
- /home/k1tt3nz/CLionProjects/practice_OP/libs/tasks/practice.h \
- /home/k1tt3nz/CLionProjects/practice_OP/libs/tasks/practice.cpp \
- /home/k1tt3nz/CLionProjects/practice_OP/libs/tasks/practice.h \
+ /home/k1tt3nz/CLionProjects/practice_OP/libs/auto_tests/../../practice.h \
+ /home/k1tt3nz/CLionProjects/practice_OP/libs/auto_tests/../../practice.cpp \
+ /home/k1tt3nz/CLionProjects/practice_OP/libs/auto_tests/../../practice.h \
  /home/k1tt3nz/CLionProjects/practice_OP/libs/classes/matrix.h \
  /usr/include/c++/11.2.0/iomanip /usr/include/c++/11.2.0/locale \
  /usr/include/c++/11.2.0/bits/locale_facets_nonio.h \

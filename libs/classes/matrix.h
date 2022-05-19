@@ -17,7 +17,6 @@ private:
     size_t m_rows{};
     size_t m_cols{};
 public:
-    matrix();
 
     matrix(size_t nRows, size_t nCols);
 
@@ -30,6 +29,8 @@ public:
     int getRows();
 
     int getCols();
+
+    int getPointer();
 
     int getIndex(const size_t i, const size_t j);
 
@@ -50,13 +51,8 @@ public:
     void multiplicationMatrices(const matrix<T> &m1, const matrix<T> &m2);
 };
 
-template<class T>
-matrix<T>::matrix() {
-    m_rows = 0;
-    m_cols = 0;
-    m_values = nullptr;
-}
 
+// Конструктор матрицы размерностью nRows * nCols
 template<class T>
 matrix<T>::matrix(size_t nRows, size_t nCols) {
     m_rows = nRows;
@@ -65,6 +61,19 @@ matrix<T>::matrix(size_t nRows, size_t nCols) {
 
 }
 
+// Конструктор копирования матрицы
+template<class T>
+matrix<T>::matrix(matrix &m1) {
+    this->m_rows = m1.getRows();
+    this->m_cols = m1.getCols();
+    this->m_values = new T[m_rows * m_cols];
+    for (int i = 0; i < m_rows; ++i) {
+        for (int j = 0; j < m_cols; ++j)
+            m_values[i * m_cols + j] = m1.getIndex(i, j);
+    }
+}
+
+// Конструктор квадратной матрицы из вектора
 template<class T>
 matrix<T>::matrix(vector<T> &v) {
     size_t sizeRowsAndCols = sqrt(v.size());
@@ -78,17 +87,7 @@ matrix<T>::matrix(vector<T> &v) {
     }
 }
 
-template<class T>
-matrix<T>::matrix(matrix &m1) {
-    this->m_rows = m1.getRows();
-    this->m_cols = m1.getCols();
-    this->m_values = new T[m_rows * m_cols];
-    for (int i = 0; i < m_rows; ++i) {
-        for (int j = 0; j < m_cols; ++j)
-            m_values[i * m_cols + j] = m1.getIndex(i, j);
-    }
-}
-
+// Деструктор матрицы
 template<class T>
 matrix<T>::~matrix() {
     if (nullptr != m_values)
@@ -96,6 +95,7 @@ matrix<T>::~matrix() {
 }
 
 
+// Генерирую матрицы 0 и 1 расположенных в шахматном порядке
 template<class T>
 void matrix<T>::generateChessMatrix() {
     for (int i = 0; i < m_rows; ++i) {
@@ -141,6 +141,11 @@ int matrix<T>::getRows() {
 template<class T>
 int matrix<T>::getCols() {
     return m_cols;
+}
+
+template<class T>
+int matrix<T>::getPointer() {
+    return *m_values;
 }
 
 template<class T>
@@ -198,6 +203,7 @@ void matrix<T>::multiplicationMatrices(const matrix<T> &m1, const matrix<T> &m2)
         }
     }
 }
+
 
 
 #endif

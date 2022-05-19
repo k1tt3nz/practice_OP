@@ -5,9 +5,7 @@
 
 using namespace std;
 
-struct point {
-    double x{}, y{};
-};
+
 
 // Линейные алгоритмы
 // В равнобедренном прямоугольном треугольнике известна высота,
@@ -17,7 +15,8 @@ int task_1();
 //Заданы координаты вершин треугольника на плоскости.
 //Вывести их в порядке обхода по часовой стрелке (для проверки
 //достаточно рассмотреть знаки внутренних углов).
-void task_2(const point a, const point b, const point c, vector<pair<double, double>> &vec) ;
+//void
+//createVectorTriangleVerticesClockwise(const point a, const point b, const point c, vector<pair<double, double>> &vec);
 
 void task_3();
 

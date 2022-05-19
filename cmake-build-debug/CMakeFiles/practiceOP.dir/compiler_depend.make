@@ -239,9 +239,9 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
   ../libs/auto_tests/tests_practice.h \
   ../libs/auto_tests/tests_practice.cpp \
   ../libs/auto_tests/tests_practice.h \
-  ../libs/tasks/practice.h \
-  ../libs/tasks/practice.cpp \
-  ../libs/tasks/practice.h \
+  ../practice.h \
+  ../practice.cpp \
+  ../practice.h \
   ../libs/classes/matrix.h \
   /usr/include/c++/11.2.0/iomanip \
   /usr/include/c++/11.2.0/locale \
@@ -287,7 +287,9 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11.2.0/bits/locale_facets_nonio.h:
 
-../libs/tasks/practice.cpp:
+../practice.cpp:
+
+../practice.h:
 
 ../libs/auto_tests/tests_practice.cpp:
 
@@ -578,8 +580,6 @@ CMakeFiles/practiceOP.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11.2.0/typeinfo:
 
 /usr/include/c++/11.2.0/bits/streambuf_iterator.h:
-
-../libs/tasks/practice.h:
 
 /usr/include/c++/11.2.0/tr1/gamma.tcc:
 
